@@ -1,4 +1,10 @@
-﻿import pandas as pd
+﻿# -*- coding: utf-8 -*-
+"""
+İslam Akaid ve Deliller Külliyatı / Islamic Creed Compendium
+Diyanet Kaynaklı Hz. Muhammed (s.a.v.) Özel Ayetler Modülü Entegre Edilmiştir.
+"""
+
+import pandas as pd
 import streamlit as st
 
 # Sayfa Yapılandırması
@@ -91,6 +97,152 @@ lang = st.sidebar.radio(
     "Dil / Language", ["Türkçe", "English"], label_visibility="collapsed"
 )
 
+# ----------------- DİYANET KAYNAKLI HZ. MUHAMMED (S.A.V.) AYETLERİ -----------------
+diyanet_hz_muhammed_ayetleri = [
+    {
+        "sure": "Ahzab Suresi",
+        "ayet_no": "40",
+        "baslik": "Mühr-ü Nübüvve (Son Peygamber)",
+        "english_title": "Seal of the Prophets (The Final Prophet)",
+        "meal": (
+            "Muhammed, erkeklerinizden hiçbirinin babası değildir; fakat o,"
+            " Allah'ın Resûl'ü ve nebîlerin sonuncusudur. Allah her şeyi hakkıyla"
+            " bilendir."
+        ),
+        "english_meal": (
+            "Muhammad is not the father of [any] one of your men, but [he is]"
+            " the Messenger of Allah and last of the prophets. And Allah is ever,"
+            " of all things, Knowing."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Ahzab Suresi",
+        "ayet_no": "56",
+        "baslik": "Salat-ü Salam Emri",
+        "english_title": "Command of Salat and Salam",
+        "meal": (
+            "Şüphesiz Allah ve melekleri O'nun Peygamberine salat ederler. Ey"
+            " iman edenler! Siz de ona salat edin ve tam bir teslimiyetle selam"
+            " verin."
+        ),
+        "english_meal": (
+            "Indeed, Allah and His angels confer blessing upon the Prophet. O"
+            " you who have believed, ask [ Allah to confer] blessing upon him"
+            " and ask [Him to grant] him peace."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Fetih Suresi",
+        "ayet_no": "29",
+        "baslik": "Resulullah'ın ve Sahabenin Vasfı",
+        "english_title": "Attributes of the Messenger and Companions",
+        "meal": (
+            "Muhammed Allah'ın elçisidir. Yanında bulunanlar da kafirlere karşı"
+            " çetin, kendi aralarında merhametlidirler..."
+        ),
+        "english_meal": (
+            "Muhammad is the Messenger of Allah; and those with him are forceful"
+            " against the disbelievers, merciful among themselves..."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Ali İmran Suresi",
+        "ayet_no": "144",
+        "baslik": "Resulün Beşeri Yönü ve Tebliğ Görevi",
+        "english_title": "The Mortal Aspect and Mission of the Messenger",
+        "meal": (
+            "Muhammed ancak bir elçidir. Ondan önce de elçiler gelip geçmiştir."
+            " Şimdi o ölür veya öldürülürse gerisin geriye (İslam'dan küfre) mi"
+            " döneceksiniz?..."
+        ),
+        "english_meal": (
+            "Muhammad is not but a messenger. [Other] messengers have passed on"
+            " before him. So if he was to die or be killed, would you turn back"
+            " on your heels?..."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Duha Suresi",
+        "ayet_no": "3-8",
+        "baslik": "O'na Lütfedilen İlahi Nimetler",
+        "english_title": "Divine Blessings Bestowed Upon Him",
+        "meal": (
+            "Rabbin seni terk etmedi ve sana darılmadı. Kesinlikle ahiret senin"
+            " için dünyadan hayırlıdır. İleride Rabbin sana verecek de sen hoşnut"
+            " olacaksın. O, seni bir yetim bulup barındırmadı mı? Seni yolunu"
+            " kaybetmiş olarak bulup yol göstermedi mi? Seni bir fakir bulup"
+            " zengin etmedi mi?"
+        ),
+        "english_meal": (
+            "Your Lord has not taken leave of you, [O Muhammad], nor has He"
+            " detested [you]. And the Hereafter is better for you than the first"
+            " [life]. And your Lord is going to give you, and you will be"
+            " satisfied. Did He not find you an orphan and give [you] refuge? And"
+            " found you lost and guided [you]? And found you poor and made"
+            " [you] self-sufficient?"
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "İnşirah Suresi",
+        "ayet_no": "1-4",
+        "baslik": "Kalbinin İnşirahı (Genişletilmesi)",
+        "english_title": "Expansion of His Blessed Heart",
+        "meal": (
+            "Biz senin göğsünü açıp genişletmedik mi? Belini büken yükünü"
+            " üzerinden almadık mı? Senin şanını yüceltmedik mi?"
+        ),
+        "english_meal": (
+            "Did We not expand for you, [O Muhammad], your breast? And remove"
+            " from you your burden? Which had weighed upon your back? And raised"
+            " high for you your repute?"
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Kalem Suresi",
+        "ayet_no": "4",
+        "baslik": "Yüce Ahlak Sahibi Olması",
+        "english_title": "Possession of Exalted Morality",
+        "meal": "Şüphesiz sen yüce bir ahlak üzeresin.",
+        "english_meal": "And indeed, you are of a great moral character.",
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Enbiya Suresi",
+        "ayet_no": "107",
+        "baslik": "Alemlere Rahmet Olması",
+        "english_title": "Mercy to the Worlds",
+        "meal": "Biz seni ancak alemlere rahmet olarak gönderdik.",
+        "english_meal": (
+            "And We have not sent you, [O Muhammad], except as a mercy to the"
+            " worlds."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+    {
+        "sure": "Ahzab Suresi",
+        "ayet_no": "45-46",
+        "baslik": "Şahit, Müjdeleyici ve Uyarıcı Sıfatları",
+        "english_title": "Witness, Bringer of Good Tidings, and Warner",
+        "meal": (
+            "Ey nebî! Biz seni şahit, müjdeleyici ve uyarıcı; Allah'ın izniyle"
+            " kendi yoluna çağıran bir davetçi ve etrafa ışık saçan bir kandil"
+            " olarak gönderdik."
+        ),
+        "english_meal": (
+            "O Prophet, indeed We have sent you as a witness and a bringer of"
+            " good tidings and a warner. And one who invites to Allah, by His"
+            " permission, and an illuminating lamp."
+        ),
+        "kaynak": "Diyanet İşleri Başkanlığı Kur'an-ı Kerim Meali",
+    },
+]
+
 # ----------------- ÇOK DİLLİ ARAYÜZ VE İÇERİK SÖZLÜĞÜ -----------------
 if lang == "Türkçe":
     t = {
@@ -100,6 +252,7 @@ if lang == "Türkçe":
         "menu": [
             "Genel Bakış & Özet",
             "Kur'an Ayetleri (20+)",
+            "Peygamberimize Ait Ayetler (Diyanet)",
             "Hadis-i Şerifler (20+)",
             "İslam Alimleri (20+)",
             "Risale-i Nur Örnekleri (20+)",
@@ -128,13 +281,16 @@ if lang == "Türkçe":
         "scope_title": "🎯 Uygulama Kapsamı",
         "scope_desc": (
             "- *Kur'an Delilleri:* Kainattaki nizamı ve yaratılışı doğrudan"
-            " ispat eden ayetler.\n- *Nebevi Hikmetler:* Peygamber"
-            " Efendimiz'in tefekküre ve imana yönlendiren buyrukları.\n-"
-            " *Alimlerin Görüşleri:* Gazali, İbn Sina, İmam Rabbani gibi"
-            " zatların felsefi reddiyeleri.\n- *Risale-i Nur Temsilleri:*"
-            " Fabrika, kasr-ı nur gibi akla kapı açan muazzam misaller."
+            " ispat eden ayetler.\n- *Peygamberimize Ait Ayetler:* Diyanet"
+            " mealine göre Hz. Muhammed'e (s.a.v.) hitap eden ayetler.\n-"
+            " *Nebevi Hikmetler:* Peygamber Efendimiz'in tefekküre ve imana"
+            " yönlendiren buyrukları.\n- *Alimlerin Görüşleri:* Gazali, İbn"
+            " Sina, İmam Rabbani gibi zatların felsefi reddiyeleri.\n-"
+            " *Risale-i Nur Temsilleri:* Fabrika, kasr-ı nur gibi akla kapı açan"
+            " muazzam misaller."
         ),
         "c_ayet": "Kur'an Ayeti",
+        "c_hz_ayet": "Hz. Muhammed'e (s.a.v.) Ait Ayet",
         "c_hadis": "Hadis-i Şerif",
         "c_alim": "İslam Alimi",
         "c_nursi": "Risale-i Nur Örneği",
@@ -145,6 +301,14 @@ if lang == "Türkçe":
         "section_ayet_desc": (
             "Ateizm, deizm ve materyalizmin iddialarını temelden sarsan 20'den"
             " fazla ayet, mealleri ve tahlilleri."
+        ),
+        "section_hz_ayet_title": (
+            "📜 Diyanet Mealine Göre Peygamber Efendimize (s.a.v.) Ait Ayetler"
+        ),
+        "section_hz_ayet_desc": (
+            "Kur'an-ı Kerim'de doğrudan Hz. Muhammed'e (s.a.v.) hitap eden,"
+            " O'nu öven ve görevini tescilleyen Diyanet İşleri Başkanlığı"
+            " onaylı ayetler."
         ),
         "section_hadis_title": "📜 Hadis-i Şerifler ve İman Hakikatleri",
         "section_hadis_desc": (
@@ -438,9 +602,7 @@ if lang == "Türkçe":
             {
                 "ref": "Buhari, Bed'ül-Halk",
                 "title": "Yaratılışın Ezeliliği",
-                "text": (
-                    "Allah var idi, O'ndan başka hiçbir şey yok idi..."
-                ),
+                "text": "Allah var idi, O'ndan başka hiçbir şey yok idi...",
                 "desc": (
                     "Maddenin ezelî olmadığını, her şeyin varlığının Allah'a"
                     " dayandığını ifade eder."
@@ -449,9 +611,7 @@ if lang == "Türkçe":
             {
                 "ref": "Buhari, Cenaiz",
                 "title": "Fıtrat Üzere Doğum",
-                "text": (
-                    "Her doğocuk İslam fıtratı üzerine doğar..."
-                ),
+                "text": "Her doğocuk İslam fıtratı üzerine doğar...",
                 "desc": (
                     "İnsanın özünde bir Yaratıcı'yı arama potansiyelinin"
                     " fıtrî olduğunu gösterir."
@@ -514,9 +674,7 @@ if lang == "Türkçe":
             {
                 "ref": "Müsned-i Ahmed",
                 "title": "Her Şeyde Birlik Delili",
-                "text": (
-                    "Her şeyde O'nun birliğine şehadet eden bir delil vardır."
-                ),
+                "text": "Her şeyde O'nun birliğine şehadet eden bir delil vardır.",
                 "desc": (
                     "Kainattaki her şeyin bir Wahid-i Ahad'a işaret ettiğini"
                     " bildirir."
@@ -919,118 +1077,6 @@ if lang == "Türkçe":
                     " serer."
                 ),
             },
-            {
-                "category": "Kudret",
-                "title": "Asit ve Tohum Mucizesi",
-                "text": (
-                    "Küçücük bir çekirdeğin içine devasa bir ağacın programını"
-                    " sığdıran kudret, ancak her şeye gücü yeten Zat'a aittir."
-                ),
-                "desc": (
-                    "DNA ve genetik şifrelerin arkasındaki ilahi ilmi ispatlar."
-                ),
-            },
-            {
-                "category": "İman & Küfür",
-                "title": "İki Yolcu Hikayesi",
-                "text": (
-                    "Yolculukta iki yolcudan biri her şeyi sahibine verip rahat"
-                    " eder, diğeri her şeyi tabiata verip azap çeker."
-                ),
-                "desc": (
-                    "İman edenlerin huzurunu, inkarcıların ruhsal bunalımını"
-                    " karşılaştırır."
-                ),
-            },
-            {
-                "category": "Rububiyet",
-                "title": "Kaptan ve Gemideki Yolcu",
-                "text": (
-                    "Muazzam bir gemi kaptansız ve dümensiz fırtınalı denizde"
-                    " yüzebilir mi? Kainat gemisi de sahipsiz olamaz."
-                ),
-                "desc": "Evrenin idaresindeki kusursuzluğu açıklar.",
-            },
-            {
-                "category": "Tabiat",
-                "title": "Çorba Kazanı ve Tabiat",
-                "text": (
-                    "Tabiat dedikleri şey, sadece ilahi sanatın bir tezahür"
-                    " defteridir; icat edici değil, icat edilendir."
-                ),
-                "desc": "Tabiatçılığın temel yanılgısını yıkar.",
-            },
-            {
-                "category": "Ebediyet",
-                "title": "İnsanın Sonsuz İstidatları",
-                "text": (
-                    "İnsanda sonsuz cennet arzusu vardır. Fani dünya bu"
-                    " istekleri tatmin edemez; demek ki ebedi bir alem vardır."
-                ),
-                "desc": (
-                    "İnsanın manevi yapısının ahireti talep ettiğini ispatlar."
-                ),
-            },
-            {
-                "category": "Zat-ı Zülcelal",
-                "title": "Zerrelerin Vazifesi",
-                "text": (
-                    "Her zerre, Rabbin emriyle hareket eden bir asker gibidir."
-                    " Ordular gibi uyum içinde çalışırlar."
-                ),
-                "desc": "Atom altı dünyadaki kusursuz düzeni açıklar.",
-            },
-            {
-                "category": "İlmi Delil",
-                "title": "Ecnebi Filozofun İtirafı",
-                "text": (
-                    "Batılı bazı dürüst filozofların kainatın tesadüfle"
-                    " açıklanamayacağını itiraf etmeleri."
-                ),
-                "desc": "Objektif ilmin imana yaklaşmasını vurgular.",
-            },
-            {
-                "category": "Dua",
-                "title": "Hadsiz İhtiyaçlar ve Acizane",
-                "text": (
-                    "İnsanın hadsiz ihtiyaçları ve aczi vardır. Demek ki her"
-                    " şeye gücü yeten bir Mercii'ye sığınmalıdır."
-                ),
-                "desc": "Duasız yaşayamayan insan psikolojisini tahlil eder.",
-            },
-            {
-                "category": "Ruh",
-                "title": "Rüya ve Zamanın Nispeti",
-                "text": (
-                    "Uykuda birkaç saniyede yıllarca rüya görmek, ruhun"
-                    " maddeye bağlı olmadığını gösterir."
-                ),
-                "desc": "Materyalist ruh inkarcılığını çürütür.",
-            },
-            {
-                "category": "Nimet",
-                "title": "Arı, İpekböceği ve İnek",
-                "text": (
-                    "Süt veren inek, bal veren arı birer ilahi memurdur;"
-                    " kendileri bu sanatı bilemezler."
-                ),
-                "desc": (
-                    "Hayvanlardaki harika üretimin Yaratıcı'nın ikramı olduğunu"
-                    " bildirir."
-                ),
-            },
-            {
-                "category": "Nizam",
-                "title": "Güneş Sobası ve Kainat Lambası",
-                "text": (
-                    "Dünyamızı ısıtan güneş sobamızı, geceyi yorganımızı yapan"
-                    " Zat her şeye kadirdir."
-                ),
-                "desc": (
-                    "Kainattaki ekolojik dengenin rahmet eseri olduğunu"
-                    " ispatlar."
-                ),
-            },
         ],
     }
 else:
@@ -1041,6 +1087,7 @@ else:
         "menu": [
             "Overview & Summary",
             "Quranic Verses (20+)",
+            "Verses Pertaining to the Prophet (Diyanet)",
             "Hadiths (20+)",
             "Islamic Scholars (20+)",
             "Risale-i Nur Examples (20+)",
@@ -1068,13 +1115,16 @@ else:
         "scope_title": "🎯 Application Scope",
         "scope_desc": (
             "- *Quranic Evidence:* Verses directly proving order and creation"
-            " in the universe.\n- *Prophetic Wisdom:* The Prophet's statements"
+            " in the universe.\n- *Verses on the Prophet:* Verses addressing and"
+            " honoring Prophet Muhammad (pbuh) according to Diyanet"
+            " translation.\n- *Prophetic Wisdom:* The Prophet's statements"
             " directing towards contemplation and faith.\n- *Scholars' Views:*"
             " Philosophical refutations by figures such as Ghazali, Avicenna,"
             " and Imam Rabbani.\n- *Risale-i Nur Allegories:* Magnificent"
             " examples opening the door to reason."
         ),
         "c_ayet": "Quranic Verse",
+        "c_hz_ayet": "Verse Pertaining to Prophet Muhammad (pbuh)",
         "c_hadis": "Hadith",
         "c_alim": "Islamic Scholar",
         "c_nursi": "Risale-i Nur Example",
@@ -1087,6 +1137,15 @@ else:
         "section_ayet_desc": (
             "Over 20 verses, their meanings, and analyses fundamentally"
             " shaking the claims of atheism, deism, and materialism."
+        ),
+        "section_hz_ayet_title": (
+            "📜 Verses Pertaining to Prophet Muhammad (pbuh) According to Diyanet"
+            " Translation"
+        ),
+        "section_hz_ayet_desc": (
+            "Approved verses by the Presidency of Religious Affairs directly"
+            " addressing, honoring, and verifying the mission of Prophet"
+            " Muhammad (pbuh) in the Quran."
         ),
         "section_hadis_title": (
             "📜 Hadiths and Realities of Faith (with Sources)"
@@ -1105,7 +1164,9 @@ else:
             "20 magnificent Risale evidence items such as Resurrection,"
             " Kasr-ı Nur, and the Factory allegory."
         ),
-        "section_akim_title": "⚖️ Argument Comparison Table Against Movements",
+        "section_akim_title": (
+            "⚖️ Argument Comparison Table Against Movements"
+        ),
         "section_akim_desc": (
             "Basic claims of atheism, deism, and materialism alongside"
             " scientific answers of Islamic faith."
@@ -2091,7 +2152,37 @@ elif menu == t["menu"][1]:
             unsafe_allow_html=True,
         )
 
-elif menu == t["menu"][2]:
+elif menu == t["menu"][2]:  # Peygamberimize Ait Ayetler (Diyanet) [YENİ BÖLÜM]
+    st.markdown(f"## {t['section_hz_ayet_title']}")
+    st.markdown(t["section_hz_ayet_desc"])
+    st.markdown("---")
+
+    for item in diyanet_hz_muhammed_ayetleri:
+        st.markdown(f"<div class='card'>", unsafe_allow_html=True)
+        st.markdown(
+            f"<span class='badge'>📖 {item['sure']} - Ayet"
+            f" {item['ayet_no']}</span>",
+            unsafe_allow_html=True,
+        )
+        baslik_str = (
+            item["baslik"]
+            if lang == "Türkçe"
+            else item.get("english_title", item["baslik"])
+        )
+        meal_str = item["meal"] if lang == "Türkçe" else item["english_meal"]
+
+        st.markdown(f"### {baslik_str}")
+        st.markdown(
+            f"<div class='arabic-text'>\"{meal_str}\"</div>",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            f"<small><b>Kaynak:</b> {item['kaynak']}</small>",
+            unsafe_allow_html=True,
+        )
+        st.markdown("</div>", unsafe_allow_html=True)
+
+elif menu == t["menu"][3]:
     st.markdown(f"## {t['section_hadis_title']}")
     st.markdown(t["section_hadis_desc"])
 
@@ -2121,7 +2212,7 @@ elif menu == t["menu"][2]:
             unsafe_allow_html=True,
         )
 
-elif menu == t["menu"][3]:
+elif menu == t["menu"][4]:
     st.markdown(f"## {t['section_alim_title']}")
     st.markdown(t["section_alim_desc"])
 
@@ -2149,7 +2240,7 @@ elif menu == t["menu"][3]:
             unsafe_allow_html=True,
         )
 
-elif menu == t["menu"][4]:
+elif menu == t["menu"][5]:
     st.markdown(f"## {t['section_nursi_title']}")
     st.markdown(t["section_nursi_desc"])
 
@@ -2178,7 +2269,7 @@ elif menu == t["menu"][4]:
             unsafe_allow_html=True,
         )
 
-elif menu == t["menu"][5]:
+elif menu == t["menu"][6]:
     st.markdown(f"## {t['section_akim_title']}")
     st.markdown(t["section_akim_desc"])
 
@@ -2310,7 +2401,7 @@ elif menu == t["menu"][5]:
 
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-elif menu == t["menu"][6]:
+elif menu == t["menu"][7]:
     st.markdown(f"## {t['legal_title']}")
     st.markdown(
         f"""
